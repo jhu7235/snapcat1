@@ -1,6 +1,6 @@
 /* global window */
 
-const kittydar = require('./kittydar');
+const kittydar = require('./js/kittydar');
 
 // console.log('RUNNING VIDEO.JS');
 (() => {
@@ -32,11 +32,17 @@ const kittydar = require('./kittydar');
   };
 
   video.addEventListener('play', function () {
+    let count = 0;
     const $this = this; // cache
     (function loop() {
+      if (count++ > 10) {
+        count = 0;
+        const cat = kittydar.detectCats(canvas);
+        console.log('CAT', cat, count);
+      }
       context.drawImage($this,
         0, 0, 800, 600);
-      setTimeout(loop, 5000); // drawing at 30fps
+      setTimeout(loop, 10); // drawing at 30fps
     })();
   }, 0);
 })();

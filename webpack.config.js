@@ -23,8 +23,23 @@ module.exports = {
       {
         test: /\.svg$|\.ttf?|\.woff$|\.woff2|\.eof|\.eot/,
         loader: 'file-loader'
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.node$/,
+        use: 'node-loader'
       }
     ]
+  },
+  node: {
+    fs: 'empty'
   }
 };
 

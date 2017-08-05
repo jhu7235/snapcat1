@@ -12,7 +12,7 @@ if (process.arch) {   // in node
 exports.Kittydar = Kittydar;
 
 exports.detectCats = function(canvas, options) {
-  var kittydar = new Kittydar(options);
+  const kittydar = new Kittydar(options);
   return kittydar.detectCats(canvas);
 }
 

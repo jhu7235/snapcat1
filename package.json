@@ -4,7 +4,7 @@
   "description": "Your pet, but better!",
   "main": "index.js",
   "scripts": {
-    "start": "node server"
+    "start": "webpack -w & nodemon --watch server -e js,html server/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +12,7 @@
     "brain": "^0.7.0",
     "canvas": "^1.6.6",
     "express": "^4.14.1",
+    "gulp": "^3.9.1",
     "hog-descriptor": "^0.5.0",
     "morgan": "^1.8.1",
     "svm": "^0.1.1"
@@ -23,12 +24,15 @@
     "babel-preset-react": "^6.22.0",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.24.1",
+    "css-loader": "^0.28.4",
     "eslint": "^4.3.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
     "file-loader": "^0.11.2",
+    "fs": "0.0.1-security",
+    "node-loader": "^0.6.0",
     "webpack": "^3.4.1"
   }
 }
